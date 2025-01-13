@@ -1,0 +1,21 @@
+app: card-integrate-proxy
+env: dev
+http_address: 8280
+sensitive_fields:
+  password: (?P<FIRST>[0-9]{6})(?P<MASK>[0-9]*)(?P<LAST>[0-9]{4})
+basic_auth:
+  username: admin
+  password: 12345678
+jwt_exclude_paths:
+database:
+  host: 0.0.0.0
+  port: 5432
+  username: pmtrade
+  password: Abc12345
+  database: pmtrade
+  search_path: pst
+  auto_migration: false
+cache:
+  host: 0.0.0.0
+  port: 6379
+  password: 12345678

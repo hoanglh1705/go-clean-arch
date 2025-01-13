@@ -1,0 +1,17 @@
+vendor
+.vscode/launch.json
+.docker/dev.Dockerfile
+.docker/dev-alpine.Dockerfile
+**/__debug_bin*
+protoc-21.3-linux-x86_64.zip
+protoc-21.3-osx-x86_64.zip
+
+cmd/server/pnh
+
+node_modules
+export-env.sh
+cmd/server/pnh
+pms-proj-dev-bafda63a6dd1.json
+
+.npmrc
+.VERSION
