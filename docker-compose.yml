@@ -1,0 +1,28 @@
+version: "3.5"
+
+services:
+  backend:
+    image: lhhoangit/go-clean-arch
+    ports:
+      - 8280:8280 # http server
+    networks:
+      - tele-money-net
+      - db-network
+    configs:
+      - source: go-clean-arch.conf
+        target: /config/config.yml
+    deploy: 
+      mode: replicated
+      replicas: 2
+
+networks: 
+  tele-money-net:
+    driver: overlay
+    attachable: true
+  db-network:
+    external:
+      true
+
+configs:
+  go-clean-arch.conf:
+    external: true

@@ -16,3 +16,7 @@ docker-config:
 
 build-image:
 	docker build -t lhhoangit/go-clean-arch .
+
+lint: 
+	golangci-lint version
+	golangci-lint run -v -c golangci.yml ./...

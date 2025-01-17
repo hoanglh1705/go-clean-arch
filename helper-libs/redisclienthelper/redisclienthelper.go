@@ -5,7 +5,7 @@ import (
 	"crypto/tls"
 	"go-clean-arch/helper-libs/tlshelper"
 
-	"github.com/redis/go-redis/v9"
+	redis "github.com/redis/go-redis/v9"
 	"go.uber.org/zap"
 )
 

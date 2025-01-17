@@ -13,7 +13,8 @@ import (
 
 	"github.com/labstack/echo-contrib/echoprometheus"
 
-	"github.com/labstack/echo/v4"
+	echo "github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	_ "github.com/swaggo/echo-swagger"
 	echoSwagger "github.com/swaggo/echo-swagger"
 	"go.uber.org/zap"
@@ -56,6 +57,8 @@ func main() {
 		httpServer.GET("/swagger/*", echoSwagger.WrapHandler)
 		// httpServer.Static("/swaggerui", "swaggerui")
 	}
+	httpServer.Use(middleware.Recover())
+
 	httpServer.Use(echoprometheus.NewMiddleware("myapp"))   // adds middleware to gather metrics
 	httpServer.GET("/metrics", echoprometheus.NewHandler()) // adds route to serve gathered metrics
 
